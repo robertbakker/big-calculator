@@ -112,7 +112,7 @@ class Calculator
 
                 if ($operators->count() > 0) {
                     if (
-                        (!$this->isNumber($lastToken) && $lastToken !== ')') &&
+                        (!$this->isNumber($lastToken) && !$this->isVariable($lastToken) && !$this->isConstant($lastToken) && $lastToken !== ')') &&
                         $token === '-' && ($operators->top() === '(' || $this->isOperator($operators->top()))) {
                         $operators->push('m');
                         continue;
