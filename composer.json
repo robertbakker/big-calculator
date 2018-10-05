@@ -24,7 +24,7 @@
         }
     ],
     "scripts": {
-        "test": "vendor/bin/phpunit-watcher watch",
+        "test": "./vendor/bin/phpunit-watcher watch",
         "bench": "./vendor/bin/phpbench run --report=default"
     },
     "config": {
