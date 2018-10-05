@@ -1,0 +1,33 @@
+{
+    "name": "robertbakker/big-calculator",
+    "type": "library",
+    "description": "Calculator with big numbers",
+    "require": {
+        "brick/math": "^0.7.3",
+        "nette/tokenizer": "^2.3"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^7.3",
+        "spatie/phpunit-watcher": "^1.6",
+        "phpbench/phpbench": "@dev"
+    },
+    "autoload": {
+        "psr-4": {
+            "RobertBakker\\BigCalculator\\": "src/"
+        }
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Robert Bakker",
+            "email": "r.m.bakker@live.nl"
+        }
+    ],
+    "scripts": {
+        "test": "vendor/bin/phpunit-watcher watch",
+        "bench": "./vendor/bin/phpbench run --report=default"
+    },
+    "config": {
+        "process-timeout": 0
+    }
+}
