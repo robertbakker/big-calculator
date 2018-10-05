@@ -9,12 +9,19 @@ when dealing with calculations using decimals.
 ## Usage
 
 ```php
-
 use RobertBakker\BigCalculator\Calculator;
 
 $calculator = Calculator::create();
 $calculator->calculate("1.234 / 5 + 3.4"); // outputs \Brick\Math\BigDecimal
 
+```
+
+Variables
+```php
+// Example with 4% interest over 3 years
+$calculator = Calculator::create();
+$calculator->addVariable("years", 3);
+$calculator->calculate("2000 / 1.04 ^ years");
 ```
 
 ## Development
