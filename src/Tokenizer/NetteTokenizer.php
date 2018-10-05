@@ -41,6 +41,7 @@ class NetteTokenizer implements TokenizerInterface
         $tokens = $this->tokenizer->tokenize($expression);
 
         while ($token = $tokens->nextToken()) {
+            if($token->type === T_WHITESPACE) continue;
             $stack->unshift($token->value);
         }
 

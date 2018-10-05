@@ -92,5 +92,9 @@ class CalculatorTest extends TestCase
 
         $output = $calc->calculate("1*2+4-(2*5)");
         $this->assertEquals(-4, $output->toFloat());
+
+        $output = $calc->calculate("( (70000 - 50000) / 50000 ) * 100");
+        $this->assertEquals(40, $output->toFloat());
     }
+
 }
