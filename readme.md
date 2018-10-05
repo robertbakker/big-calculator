@@ -21,7 +21,7 @@ Variables
 // Example with 4% interest over 3 years
 $calculator = Calculator::create();
 $calculator->addVariable("years", 3);
-$calculator->calculate("2000 / 1.04 ^ years");
+$calculator->calculate("2000 * 1.04 ^ years");
 ```
 
 ## Development
