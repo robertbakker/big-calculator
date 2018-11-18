@@ -13,6 +13,7 @@ use RobertBakker\BigCalculator\Operators\Multiply;
 use RobertBakker\BigCalculator\Operators\Pow;
 use RobertBakker\BigCalculator\Operators\Subtract;
 use RobertBakker\BigCalculator\Tokenizer\NetteTokenizer;
+use RobertBakker\BigCalculator\Tokenizer\Tokenizer;
 use RobertBakker\BigCalculator\Tokenizer\TokenizerInterface;
 
 class Calculator
@@ -51,7 +52,7 @@ class Calculator
             new Subtract()
         ];
 
-        $this->tokenizer = new NetteTokenizer($this->operators);
+        $this->tokenizer = new Tokenizer();
     }
 
     /**
@@ -73,7 +74,7 @@ class Calculator
         $total = $tokens->count();
         $lastToken = null;
         $token = null;
-        while ($tokens->count() != 0) {
+        while (!$tokens->isEmpty()) {
             $isFirst = $tokens->count() === $total;
             if (!$isFirst) {
                 $lastToken = $token;
@@ -200,7 +201,7 @@ class Calculator
      */
     private function isVariable(string $token): bool
     {
-        return strtolower($token) === $token && ctype_alpha($token);
+        return isset($this->vars[$token]);
     }
 
     /**
@@ -209,7 +210,7 @@ class Calculator
      */
     private function isConstant(string $token): bool
     {
-        return strtoupper($token) === $token && ctype_alpha($token);
+        return isset($this->constants[$token]);
     }
 
     /**

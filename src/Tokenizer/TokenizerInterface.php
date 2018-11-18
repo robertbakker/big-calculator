@@ -6,5 +6,5 @@ use SplStack;
 
 interface TokenizerInterface
 {
-    public function tokenize(string $expression): SplStack;
+    public function tokenize(string $str): SplStack;
 }

@@ -4,8 +4,7 @@
   "description": "Calculator with big numbers",
   "require": {
     "php": "^7.1",
-    "brick/math": "0.7.* | 0.8.*",
-    "nette/tokenizer": "^2.3"
+    "brick/math": "0.7.* | 0.8.*"
   },
   "require-dev": {
     "phpunit/phpunit": "^7.3",

@@ -71,6 +71,27 @@ class CalculatorTest extends TestCase
         $calc->calculate("A*A");
     }
 
+    public function testItCanUseShortVariables()
+    {
+        $calc = Calculator::create();
+
+        $calc->addVariable('a', 5);
+        $calc->addVariable('b', 10);
+
+        $result = $calc->calculate("a*b")->toFloat();
+        $this->assertEquals(50, $result);
+    }
+
+    public function testItCanUseCamelCaseVariables() {
+        $calc = Calculator::create();
+        $calc->addVariable('camelCase', 5);
+        $calc->addVariable('b', 10);
+
+        $result = $calc->calculate("camelCase * b")->toFloat();
+        $this->assertEquals(50, $result);
+    }
+
+
     public function testUnaryMinusOperation()
     {
         $calc = Calculator::create();
